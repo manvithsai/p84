@@ -1,5 +1,5 @@
-// Create a reference for the canvas
-
+canvas=document.getElementById('mycanvas');
+ctx=canvas.getContext("2d");
 img_width = 300;
 img_height = 100;
 
@@ -20,14 +20,18 @@ function uploadimg() {
 }
 
 //Write a code to grab the key-pressed event
-
+window.addEventListener("keydown",my_keydown);
 function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
 	
 		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-		//write a code to check the type of key pressed
+		{
+		aplhabetkey();
+		document.getElementById("d1").innerHTML="you pressed Alphabet key";
+		console.log("alphabet key");
+		}
 	else{
 		otherkey();
 		document.getElementById("d1").innerHTML="You pressed symbol or other key";
@@ -36,20 +40,29 @@ function my_keydown(e)
 
 function aplhabetkey()
 {
-	//upload respective image with the message. 
-
+	img_image="Alpkey.png";
+	add();
 }
+
+
 function numberkey()
 {
-	
-}
+	img_image="numkey.png";
+	add();
+}	
+
 function arrowkey()
 {
+	img_image="Arrkey.png";
+	add();
 }
+
 function specialkey()
 {
-	
-}
+	img_image="spkey.png";
+	add();
+}	
+
 function otherkey()
 {
 	img_image="otherkey.png";
