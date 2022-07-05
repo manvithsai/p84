@@ -1,4 +1,4 @@
-canvas=document.getElementById('mycanvas');
+canvas=document.getElementById('myCanvas');
 ctx=canvas.getContext("2d");
 img_width = 300;
 img_height = 100;
@@ -30,12 +30,23 @@ function my_keydown(e)
 		{
 		aplhabetkey();
 		document.getElementById("d1").innerHTML="you pressed Alphabet key";
-		console.log("alphabet key");
+		console.log("alphabetkey");
 		}
-	else{
-		otherkey();
-		document.getElementById("d1").innerHTML="You pressed symbol or other key";
+else if(( keyPressed >=48 && keyPressed <=57))	{
+numberkey()
+document.getElementById("d1").innerHTML="you pressed Number key";
+console.log("numberkey");
+}
+else if(( keyPressed >=37 && keyPressed <=40||keyPressed==17||keyPressed==18||keyPressed==27)){
+	specialkey()
+	document.getElementById("d1").innerHTML="you pressed Special key";
+	console.log("specialkey");
 	}
+else if(( keyPressed >=37 && keyPressed <=40)){
+arrowkey()
+document.getElementById("d1").innerHTML="you pressed Arrow key";
+console.log("arrowkey");
+}
 }
 
 function aplhabetkey()
